@@ -11,7 +11,7 @@ setup(name='twentytab-image-ui',
       install_requires=[
           'Django >=1.6',
           'Pillow >=2.3',
-          'django-appconf >=0.6'
+          'django-appconf >=0.6',
           'django_imagekit >=3',
       ],
       packages=find_packages(),
