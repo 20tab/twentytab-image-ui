@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import image_ui
 
-setup(name='twentytab-sortable',
+setup(name='twentytab-image-ui',
       version=image_ui.__version__,
       description='A django app that implements an admin to have thumbnails with colorbox.js',
       author='20tab S.r.l.',
