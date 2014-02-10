@@ -53,11 +53,11 @@ class ColorBoxAdmin(admin.ModelAdmin):
     Abstract admin option class to add colorbox.js (jQuery plugin)
     """
     class Media:
-        css = {"all": ("/static/image_ui/colorbox/colorbox.css",)}
+        css = {u"all": (u"{}image_ui/colorbox/colorbox.css".format(settings.STATIC_URL),)}
         js = (settings.JQUERY_LIB,
               settings.JQUERYUI_LIB,
-              '/static/image_ui/colorbox/jquery.colorbox-min.js',
-              '/static/image_ui/js/colorbox-init.js')
+              u'{}image_ui/colorbox/jquery.colorbox-min.js'.format(settings.STATIC_URL),
+              u'{}image_ui/js/colorbox-init.js'.format(settings.STATIC_URL))
 
     class Meta:
         abstract = True
@@ -68,11 +68,11 @@ class ColorBoxPositionAdmin(admin.ModelAdmin):
     Abstract admin option class to add colorbox.js (jQuery plugin)
     """
     class Media:
-        css = {"all": ("/static/image_ui/colorbox/colorbox.css",)}
+        css = {u"all": (u"{}image_ui/colorbox/colorbox.css".format(settings.STATIC_URL),)}
         js = (settings.JQUERY_LIB,
               settings.JQUERYUI_LIB,
-              '/static/image_ui/colorbox/jquery.colorbox-min.js',
-              '/static/image_ui/js/colorbox-init.js')
+              u'{}image_ui/colorbox/jquery.colorbox-min.js'.format(settings.STATIC_URL),
+              u'{}image_ui/js/colorbox-init.js'.format(settings.STATIC_URL))
 
     class Meta:
         abstract = True

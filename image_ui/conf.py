@@ -3,8 +3,8 @@ from django.conf import settings
 
 
 class ImageUIConf(AppConf):
-    ADMIN_THUMBNAIL_DEFAULT_TEMPLATE = "admin/default_thumbnail.html"
-
+    ADMIN_THUMBNAIL_DEFAULT_TEMPLATE = u"admin/default_thumbnail.html"
+    STATIC_URL = u'/static/'
     JQUERY_LIB = u"{}{}".format(
         getattr(settings, u'STATIC_URL', u'/static/'),
         u"image_ui/js/jquery-2.1.0.min.js"
@@ -19,6 +19,12 @@ class ImageUIConf(AppConf):
             self._meta.holder.ADMIN_THUMBNAIL_DEFAULT_TEMPLATE = value
             return value
         return getattr(settings, 'ADMIN_THUMBNAIL_DEFAULT_TEMPLATE')
+
+    def configure_static_url(self, value):
+        if not getattr(settings, 'STATIC_URL', None):
+            self._meta.holder.STATIC_URL = value
+            return value
+        return getattr(settings, 'STATIC_URL')
 
     def configure_jquery_lib(self, value):
         if not getattr(settings, 'JQUERY_LIB', None):
