@@ -71,7 +71,7 @@ class ColorBoxPositionAdmin(admin.ModelAdmin):
         css = {u"all": (u"{}image_ui/colorbox/colorbox.css".format(settings.STATIC_URL),)}
         js = (settings.JQUERY_LIB,
               settings.JQUERYUI_LIB,
-              u'{}image_ui/js/admin-list-reorder.js',
+              u'{}image_ui/js/admin-list-reorder.js'.format(settings.STATIC_URL),
               u'{}image_ui/colorbox/jquery.colorbox-min.js'.format(settings.STATIC_URL),
               u'{}image_ui/js/colorbox-init.js'.format(settings.STATIC_URL))
 
