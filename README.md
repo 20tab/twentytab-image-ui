@@ -7,9 +7,38 @@ A django app that implements an admin to have thumbnails with colorbox.js
 
 Use the following command: <b><i>pip install twentytab-image-ui</i></b>
 
+## Configuration
+
+Run collectstatic command or map static directory. If you use uWSGI you can map static files:
+
+```ini
+static-map = /static/image_ui/=%(path_to_site_packages)/image_ui/static/image_ui
+```
+
 
 ## Usage
 
+- models-py
+
+```py
+
+from django.db import models
+from imagekit.processors import ResizeToFill
+from imagekit.models import ImageSpecField
+
+
+class ModelTest(models.Model):
+    image = models.ImageField(upload_to='your_media_path')
+    thumb = ImageSpecField(
+        source='image',
+        processors=[ResizeToFill(50, 50)],
+        format='JPEG',
+        options={'quality': 99}
+    )
+
+```
+
+- admin.py
 
 ```py
 from django.contrib import admin
