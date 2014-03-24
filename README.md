@@ -9,6 +9,16 @@ Use the following command: <b><i>pip install twentytab-image-ui</i></b>
 
 ## Configuration
 
+Open settings.py and add image-ui to your INSTALLED_APPS:
+
+```py
+INSTALLED_APPS = {
+    ...,
+    'image-ui',
+    ...
+}
+```
+
 Run collectstatic command or map static directory. If you use uWSGI you can map static files:
 
 ```ini
