@@ -9,11 +9,7 @@ Use the following command: <b><i>pip install twentytab-image-ui</i></b>
 
 ## Configuration
 
-Run collectstatic command or map static directory. If you use uWSGI you can map static files:
-
-```ini
-static-map = /static/image_ui/=%(path_to_site_packages)/image_ui/static/image_ui
-```
+Run collectstatic command or map static directory.
 
 
 ## Usage
