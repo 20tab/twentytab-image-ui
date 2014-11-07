@@ -6,7 +6,7 @@ jQuery(function($) {
     pos_col = null;
     
     cols = $('#result_list tbody tr:first').children()
-    
+    console.log(cols)
     for (i = 0; i < cols.length; i++) {
         inputs = $(cols[i]).find('input[name*=' + pos_field + ']')
         
@@ -69,8 +69,8 @@ jQuery(function($) {
                 input = $(pos_td).children('input').first()
                 label = $(pos_td).children('strong').first()
                 
-                input.attr('value', index)
-                label.text(index)
+                input.attr('value', index+1)
+                label.text(index+1)
             });
             
             // Update row classes
